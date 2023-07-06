@@ -1,0 +1,19 @@
+.primary {
+    @apply p-4 rounded-lg ml-[10%] mr-[10%] mb-[10%] sm:ml-[30%] sm:mr-[30%];
+}
+
+.enterDone {
+    @apply transition-all duration-[600] opacity-100
+}
+
+.enterStart {
+    @apply transition-all duration-[600] opacity-0
+}
+
+.title {
+    @apply mb-4 text-[45px] font-extrabold leading-none tracking-tight text-gray-900 font-kaisei
+}
+
+.mainText {
+    @apply mb-4 text-[20px] leading-none tracking-tight text-gray-900 font-kaisei text-justify tracking-wide leading-7
+}

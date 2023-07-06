@@ -1,113 +1,361 @@
-import Image from 'next/image'
+"use client";
+import Image from "next/image";
+import Content from "@/components/Content/Content";
+import { motion } from "framer-motion";
 
 export default function Home() {
+  const allText = {
+    profile: [
+      <div>
+        I'm Austin, a junior at UC Berkeley studying Computer Science and
+        Economics. My interests range from full-stack development to financial
+        econometrics, and everything in between, including AI/ML, cloud
+        computing, trading, development economics, and data science.
+      </div>,
+      <br />,
+      <div>
+        My goal is to leverage my technical skills to become an entrepreneur
+        that solves problems faced by developing countries, especially those
+        surrounding AI adoption at individual and corporate levels as well as
+        everyday issues that are often overlooked.
+      </div>,
+      <br />,
+      <div>
+        In my free time, I enjoy watching and playing basketball, playing the
+        guitar and piano, traveling to new countries, exploring different
+        fashion styles, and eating good food.
+      </div>,
+    ],
+    exp: [
+      <div>
+        I've worked with companies including{" "}
+        <a className="hover:font-semibold" href="https://www.hioscar.com/">
+          {" "}
+          Oscar Health
+        </a>
+        , an NY-based health insurance company, as a SWE intern, where I worked
+        on projects in the intersection of data and cloud computing;{" "}
+        <a className="hover:font-semibold" href="https://www.memoryz.co/">
+          {" "}
+          Memoryz
+        </a>
+        , a personalized caretaker app, as a mobile app developer for their
+        upcoming Diaryz app; and{" "}
+        <a className="hover:font-semibold" href="https://urbaneyes.ai/">
+          {" "}
+          UrbanEyes
+        </a>
+        , a pre-seed real-estate/data startup as a data engineer, where I
+        developed the company's first ETL pipelines.
+      </div>,
+      <br />,
+      <div>
+        On campus, I'm currently a student web developer at the{" "}
+        <a
+          className="hover:font-semibold"
+          href="https://blumcenter.berkeley.edu/"
+        >
+          {" "}
+          Blum Center
+        </a>{" "}
+        and have also worked as a part-time web accessibility engineer. I am
+        involved with several organizations such as the{" "}
+        <a className="hover:font-semibold" href="https://dssberkeley.com//">
+          {" "}
+          Data Science Society at Berkeley
+        </a>{" "}
+        where I am an Academic Director, in charge of running a student-led
+        course on practical applications of data science, and{" "}
+        <a className="hover:font-semibold" href="https://www.berkeleypse.com/">
+          {" "}
+          Pi Sigma Epsilon
+        </a>
+        , where I hold the role of Director of Operations, responsible for
+        organizing meetings, workshops, and more.
+      </div>,
+    ],
+    projects: [
+      <div>
+        In my first hackathon, my friends and I made{" "}
+        <a
+          className="hover:font-semibold"
+          href="https://devpost.com/software/quiconnect"
+        >
+          {" "}
+          QuiConnect
+        </a>
+        , a QR-based contacts app that allows quick sharing of social media
+        accounts. I've went on to join other hackathons like HackMIT, where I
+        worked on a multiplayer{" "}
+        <a className="hover:font-semibold" href="https://youtu.be/UL_HUphF8SE">
+          {" "}
+          Spotify song-guessing game.
+        </a>
+      </div>,
+      <br />,
+      <div>
+        Several awards I have received for my projects include 3rd place at the
+        2022 UChicago Trading Competition for my{" "}
+        <a
+          className="hover:font-semibold"
+          href="https://github.com/aardisaputra/uchicago_case3"
+        >
+          {" "}
+          portfolio reallocation bot
+        </a>
+        , 2nd Place at CalHacks for{" "}
+        <a
+          className="hover:font-semibold"
+          href="https://devpost.com/software/aequalis"
+        >
+          {" "}
+          Aequalis
+        </a>
+        , a blockchain-based invoice tracker for hospitals to promote price
+        transparency, and 1st Place at CivHacks for{" "}
+        <a
+          className="hover:font-semibold"
+          href="https://devpost.com/software/warden-nevh5p"
+        >
+          {" "}
+          Warden
+        </a>
+        , a crime tracking app to promote safety in the Bay Area.
+      </div>,
+      <br />,
+      <div>
+        In my classes, I've worked on various projects such as{" "}
+        <a
+          className="hover:font-semibold"
+          href="https://github.com/aardisaputra/gitlet"
+        >
+          {" "}
+          Gitlet
+        </a>
+        , a Git clone,{" "}
+        <a
+          className="hover:font-semibold"
+          href="https://github.com/aardisaputra/ataxx"
+        >
+          {" "}
+          Ataxx
+        </a>
+        , an AI-powered board game,{" "}
+        <a
+          className="hover:font-semibold"
+          href="https://github.com/aardisaputra/scheme_interpreter"
+        >
+          {" "}
+          an interpreter
+        </a>{" "}
+        for the Scheme programming language, a{" "}
+        <a
+          className="hover:font-semibold"
+          href="https://inst.eecs.berkeley.edu/~cs61c/sp23/projects/proj3/"
+        >
+          {" "}
+          virtual CPU
+        </a>{" "}
+        using Logisim, and a{" "}
+        <a
+          className="hover:font-semibold"
+          href="https://inst.eecs.berkeley.edu/~cs61c/sp23/projects/proj4/"
+        >
+          {" "}
+          convolution script
+        </a>{" "}
+        written in C optimized with Open MPI and TLP.
+      </div>,
+      <br />,
+      <div>
+        For a complete list of all my projects, check out my{" "}
+        <a
+          className="hover:font-semibold"
+          href="https://github.com/aardisaputra"
+        >
+          GitHub profile
+        </a>
+        .
+      </div>,
+    ],
+    contacts: [
+      <div>
+        If you would like to reach out to me for professional inquiries or
+        request a copy of my resume, here is my{" "}
+        <a
+          className="hover:font-semibold"
+          href="https://www.linkedin.com/in/aardisaputra/"
+        >
+          LinkedIn
+        </a>{" "}
+        or feel free to shoot me an email at{" "}
+        <a
+          className="hover:font-semibold"
+          href="mailto:ardisaputra@berkeley.edu"
+        >
+          ardisaputra@berkeley.edu
+        </a>
+        . You can also find me on{" "}
+        <a
+          className="hover:font-semibold"
+          href="https://www.instagram.com/austinardisaputra/"
+        >
+          Instagram here
+        </a>
+        .
+      </div>,
+    ],
+  };
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <div>
+      <div className="flex min-h-screen flex-col items-center justify-between font-kaisei font-bold text-[45px] mr-[5%] ml-[5%] sm:text-[70px]">
+        <div className="m-auto text-center">Austin Nicola Ardisaputra</div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <Content title="Profile" content={allText.profile} />
+      <Content title="Experience" content={allText.exp} />
+      <Content title="Projects" content={allText.projects} />
+      <Content title="Contacts" content={allText.contacts} />
+      <div className="blob1 mr-[200px] mt-[50px] sm:mr-[30px] md:mr-[150px] sm:w-[600px] sm:mt-[50px]">
+        <svg viewBox="-100 -100 200 200" xmlns="http://www.w3.org/2000/svg">
+          <motion.path
+            style={{
+              stroke: "#FCBCB8",
+              strokeWidth: 1,
+              strokeLinecap: "round",
+              fill: "#FCBCB8",
+            }}
+            d="M 38.9,-56.6 C 50.7,-44.9,60.9,-34,62.7,-21.9 C64.6,-9.8,58.2,3.5,51.4,14.3C44.6,25,37.3,33.2,28.7,46.5C20,59.9,10,78.4,-4.3,84.3C-18.6,90.2,-37.3,83.6,-45.8,70.3C-54.4,56.9,-52.8,36.8,-52.2,21.1C-51.6,5.4,-52,-5.8,-50.8,-18.7C-49.6,-31.6,-46.9,-46.2,-38.2,-58.9C-29.5,-71.5,-14.7,-82.2,-0.6,-81.4C13.5,-80.6,27.1,-68.2,38.9,-56.6Z"
+            animate={{
+              d: [
+                "M38.9,-56.6 C 50.7,-44.9,60.9,-34,62.7,-21.9 C64.6,-9.8,58.2,3.5,51.4,14.3C44.6,25,37.3,33.2,28.7,46.5C20,59.9,10,78.4,-4.3,84.3C-18.6,90.2,-37.3,83.6,-45.8,70.3C-54.4,56.9,-52.8,36.8,-52.2,21.1C-51.6,5.4,-52,-5.8,-50.8,-18.7C-49.6,-31.6,-46.9,-46.2,-38.2,-58.9C-29.5,-71.5,-14.7,-82.2,-0.6,-81.4C13.5,-80.6,27.1,-68.2,38.9,-56.6Z",
+                "M46.1,-65.8C58.2,-54.6,65.5,-39.1,69.5,-23.4C73.5,-7.7,74.1,8.3,71,24.6C67.8,40.9,60.9,57.6,48.4,66.5C36,75.4,18,76.5,1.5,74.4C-14.9,72.3,-29.8,67,-43.9,58.6C-58,50.2,-71.2,38.8,-77.3,24.1C-83.5,9.4,-82.6,-8.6,-76.3,-23.8C-70,-39.1,-58.3,-51.6,-44.7,-62.3C-31.1,-73,-15.5,-81.8,0.7,-82.7C17,-83.7,34,-76.9,46.1,-65.8Z",
+                "M35.3,-48.7C49.2,-38.4,66.5,-32.8,72.3,-21.9C78.1,-11,72.3,5.3,65.8,20.2C59.4,35.1,52.2,48.5,41.1,58.2C30,67.9,15,73.8,1.2,72.2C-12.6,70.6,-25.3,61.4,-34.9,51.2C-44.5,41,-51.2,29.9,-58.3,16.9C-65.3,3.9,-72.7,-11.1,-72.6,-27.3C-72.4,-43.5,-64.6,-60.9,-51.3,-71.4C-37.9,-82,-19,-85.6,-4.2,-79.9C10.7,-74.2,21.3,-59.1,35.3,-48.7Z",
+                "M34.3,-49.2C46.1,-38.5,58.6,-30.8,62.6,-20C66.6,-9.2,62,4.7,55.4,15.8C48.8,26.9,40.2,35.1,30.6,46.6C21,58,10.5,72.7,-0.5,73.4C-11.6,74.1,-23.1,60.9,-33.8,49.8C-44.4,38.7,-54.1,29.7,-60.9,17.7C-67.7,5.7,-71.5,-9.4,-70,-25.5C-68.5,-41.5,-61.7,-58.6,-49.2,-69C-36.6,-79.5,-18.3,-83.4,-3.6,-78.6C11.2,-73.7,22.4,-60,34.3,-49.2Z",
+                "M32.9,-45.7C44.9,-36.7,58.3,-30,66.6,-18.3C75,-6.7,78.3,9.9,75.7,26.6C73.1,43.4,64.6,60.3,51,69.6C37.4,78.8,18.7,80.5,2.6,76.9C-13.4,73.3,-26.9,64.4,-38.5,54.5C-50.1,44.5,-59.9,33.6,-65.2,20.4C-70.6,7.2,-71.6,-8.2,-65.9,-20.1C-60.2,-32,-47.8,-40.4,-35.7,-49.3C-23.6,-58.3,-11.8,-67.8,-0.7,-66.9C10.5,-66,21,-54.7,32.9,-45.7Z",
+                "M38.9,-56.6 C 50.7,-44.9,60.9,-34,62.7,-21.9 C64.6,-9.8,58.2,3.5,51.4,14.3C44.6,25,37.3,33.2,28.7,46.5C20,59.9,10,78.4,-4.3,84.3C-18.6,90.2,-37.3,83.6,-45.8,70.3C-54.4,56.9,-52.8,36.8,-52.2,21.1C-51.6,5.4,-52,-5.8,-50.8,-18.7C-49.6,-31.6,-46.9,-46.2,-38.2,-58.9C-29.5,-71.5,-14.7,-82.2,-0.6,-81.4C13.5,-80.6,27.1,-68.2,38.9,-56.6Z",
+              ],
+            }}
+            transition={{
+              repeat: Infinity,
+              ease: "linear",
+              duration: 4,
+            }}
+          />
+        </svg>
       </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className="blob2 sm:ml-[-20px] md:ml-[-10px] md:mt-[5px] sm:w-[600px]">
+        <svg viewBox="-100 -100 200 200" xmlns="http://www.w3.org/2000/svg">
+          <motion.path
+            style={{
+              stroke: "#65DEF1",
+              strokeWidth: 1,
+              strokeLinecap: "round",
+              fill: "#65DEF1",
+            }}
+            d="M32.8,-47.7C42.7,-38,51,-28.6,58,-16.6C65,-4.5,70.8,10.2,66.3,20.8C61.8,31.4,47.1,38,34.3,50.1C21.6,62.2,10.8,79.9,-1.7,82.3C-14.3,84.7,-28.5,71.8,-41.8,59.8C-55,47.9,-67.2,36.8,-68.3,24.4C-69.3,11.9,-59.3,-2,-55.5,-19.4C-51.7,-36.7,-54.3,-57.5,-46.1,-67.8C-37.9,-78,-19,-77.8,-3.7,-72.7C11.5,-67.5,22.9,-57.4,32.8,-47.7Z"
+            animate={{
+              d: [
+                "M32.8,-47.7C42.7,-38,51,-28.6,58,-16.6C65,-4.5,70.8,10.2,66.3,20.8C61.8,31.4,47.1,38,34.3,50.1C21.6,62.2,10.8,79.9,-1.7,82.3C-14.3,84.7,-28.5,71.8,-41.8,59.8C-55,47.9,-67.2,36.8,-68.3,24.4C-69.3,11.9,-59.3,-2,-55.5,-19.4C-51.7,-36.7,-54.3,-57.5,-46.1,-67.8C-37.9,-78,-19,-77.8,-3.7,-72.7C11.5,-67.5,22.9,-57.4,32.8,-47.7Z",
+                "M46.4,-60.5C58.1,-55.4,64,-39.1,65.9,-23.7C67.7,-8.3,65.4,6.1,60.4,19C55.4,32,47.6,43.4,37.1,50.7C26.6,57.9,13.3,61,1,59.6C-11.2,58.1,-22.4,52.2,-33.4,45.1C-44.4,38,-55.1,29.7,-64,17.2C-72.9,4.8,-80.1,-11.8,-78.5,-28.2C-76.9,-44.7,-66.6,-61,-52,-65.2C-37.5,-69.4,-18.7,-61.5,-0.7,-60.6C17.4,-59.6,34.7,-65.7,46.4,-60.5Z",
+                "M32.8,-46.1C42.8,-37.8,51.5,-28.7,56.3,-17.5C61,-6.3,61.7,7,58,19.1C54.4,31.2,46.5,42.1,36.1,48.7C25.7,55.2,12.8,57.5,-1.9,60.1C-16.6,62.7,-33.2,65.7,-48.8,60.8C-64.4,55.9,-79,43.1,-86.4,26.6C-93.9,10,-94.2,-10.3,-87.5,-27.6C-80.7,-44.9,-67,-59.1,-51.2,-65.5C-35.5,-72,-17.7,-70.6,-3.2,-66.2C11.4,-61.9,22.7,-54.4,32.8,-46.1Z",
+                "M39.7,-55.8C51.5,-46.2,60.9,-34.5,62.4,-22.1C63.8,-9.7,57.3,3.4,55.1,20.3C52.9,37.2,55,57.9,46.5,66.6C38.1,75.3,19,72,2,69.3C-15.1,66.6,-30.3,64.5,-45.7,58.1C-61.2,51.7,-76.9,40.9,-81.2,26.6C-85.5,12.4,-78.3,-5.4,-69.1,-19C-59.9,-32.6,-48.8,-42.2,-36.9,-51.8C-25.1,-61.3,-12.5,-70.9,0.7,-71.9C14,-72.9,28,-65.4,39.7,-55.8Z",
+                "M43.7,-67.1C52.1,-54,51.4,-35.2,54,-19.4C56.7,-3.5,62.7,9.4,63.4,24.7C64.1,40,59.4,57.6,47.9,62.7C36.4,67.8,18.2,60.5,-0.1,60.7C-18.5,60.9,-37,68.6,-52.3,64.8C-67.7,60.9,-79.8,45.4,-82.2,28.9C-84.5,12.4,-77,-5.1,-69.9,-21.5C-62.9,-37.8,-56.3,-53.1,-44.7,-65.2C-33.1,-77.2,-16.6,-86.1,0.5,-86.8C17.6,-87.6,35.2,-80.1,43.7,-67.1Z",
+                "M32.8,-47.7C42.7,-38,51,-28.6,58,-16.6C65,-4.5,70.8,10.2,66.3,20.8C61.8,31.4,47.1,38,34.3,50.1C21.6,62.2,10.8,79.9,-1.7,82.3C-14.3,84.7,-28.5,71.8,-41.8,59.8C-55,47.9,-67.2,36.8,-68.3,24.4C-69.3,11.9,-59.3,-2,-55.5,-19.4C-51.7,-36.7,-54.3,-57.5,-46.1,-67.8C-37.9,-78,-19,-77.8,-3.7,-72.7C11.5,-67.5,22.9,-57.4,32.8,-47.7Z",
+              ],
+            }}
+            transition={{
+              repeat: Infinity,
+              ease: "linear",
+              duration: 7,
+            }}
+          />
+        </svg>
       </div>
-    </main>
-  )
+      <div className="blob3 mr-[200px] sm:mr-[30px] md:mr-[100px] lg:mr-[300px] md:mt-[-100px] sm:w-[600px]">
+        <svg viewBox="-100 -100 200 200" xmlns="http://www.w3.org/2000/svg">
+          <motion.path
+            style={{
+              stroke: "#ffa646",
+              strokeWidth: 1,
+              strokeLinecap: "round",
+              fill: "#ffa646",
+            }}
+            d="M43.7,-57.9C57.1,-50.3,68.8,-38.3,69.8,-25.1C70.7,-11.9,60.9,2.3,54.2,16C47.5,29.6,43.9,42.6,35.4,49.4C26.9,56.3,13.5,57,-1,58.4C-15.5,59.9,-31,61.9,-39.2,55C-47.4,48,-48.3,32,-51.9,17.7C-55.4,3.3,-61.7,-9.4,-58.8,-19.4C-56,-29.5,-44.1,-36.9,-32.8,-45.1C-21.5,-53.4,-10.7,-62.5,2.2,-65.5C15.1,-68.6,30.2,-65.5,43.7,-57.9Z"
+            animate={{
+              d: [
+                "M43.7,-57.9C57.1,-50.3,68.8,-38.3,69.8,-25.1C70.7,-11.9,60.9,2.3,54.2,16C47.5,29.6,43.9,42.6,35.4,49.4C26.9,56.3,13.5,57,-1,58.4C-15.5,59.9,-31,61.9,-39.2,55C-47.4,48,-48.3,32,-51.9,17.7C-55.4,3.3,-61.7,-9.4,-58.8,-19.4C-56,-29.5,-44.1,-36.9,-32.8,-45.1C-21.5,-53.4,-10.7,-62.5,2.2,-65.5C15.1,-68.6,30.2,-65.5,43.7,-57.9Z",
+                "M44.4,-60.5C57.3,-51.7,67.3,-38.4,73.2,-23.1C79,-7.9,80.7,9.4,76.1,25.1C71.5,40.7,60.7,54.8,47,60.9C33.3,67.1,16.7,65.4,1.3,63.6C-14,61.8,-28.1,59.9,-40.5,53.3C-53,46.7,-63.8,35.5,-71.1,21.2C-78.4,6.9,-82.1,-10.5,-78.9,-27.3C-75.6,-44,-65.6,-60.2,-51.3,-68.5C-37,-76.9,-18.5,-77.4,-1.4,-75.5C15.7,-73.6,31.5,-69.3,44.4,-60.5Z",
+                "M47.1,-64.7C57.2,-57.5,58.9,-38.6,58.7,-22.9C58.4,-7.2,56.4,5.2,51.8,16.1C47.3,27,40.3,36.4,31.2,44C22.2,51.7,11.1,57.7,-3.4,62.4C-17.9,67.1,-35.8,70.5,-46.3,63.3C-56.7,56.1,-59.8,38.2,-59.7,23.1C-59.6,7.9,-56.3,-4.7,-54,-19.4C-51.8,-34.1,-50.5,-50.9,-41.6,-58.4C-32.8,-65.9,-16.4,-64.2,1.1,-65.6C18.5,-67.1,37,-71.8,47.1,-64.7Z",
+                "M38.7,-49.3C52.7,-43.2,68.2,-35.2,73.6,-22.9C79,-10.6,74.3,6,68.3,21.4C62.2,36.9,54.8,51.1,43.2,59C31.6,66.9,15.8,68.4,1.4,66.4C-13,64.5,-26,59.1,-40.7,52.2C-55.4,45.3,-71.8,37,-78.7,23.7C-85.6,10.4,-83,-7.9,-76.4,-23.7C-69.7,-39.5,-58.9,-52.9,-45.5,-59.2C-32.1,-65.5,-16.1,-64.7,-1.8,-62.2C12.4,-59.7,24.8,-55.4,38.7,-49.3Z",
+                "M32.3,-46.4C42.9,-36.7,53.4,-28.7,60.1,-17.4C66.8,-6,69.8,8.8,66.4,22.3C63,35.8,53.4,48,41.2,57C29.1,65.9,14.6,71.7,-1.3,73.6C-17.2,75.4,-34.4,73.2,-44.1,63.4C-53.7,53.7,-55.8,36.2,-62.4,19.4C-69,2.7,-80.2,-13.5,-79.4,-28.8C-78.5,-44.1,-65.7,-58.5,-50.5,-66.6C-35.3,-74.8,-17.6,-76.7,-3.4,-72C10.8,-67.3,21.7,-56,32.3,-46.4Z",
+                "M43.7,-57.9C57.1,-50.3,68.8,-38.3,69.8,-25.1C70.7,-11.9,60.9,2.3,54.2,16C47.5,29.6,43.9,42.6,35.4,49.4C26.9,56.3,13.5,57,-1,58.4C-15.5,59.9,-31,61.9,-39.2,55C-47.4,48,-48.3,32,-51.9,17.7C-55.4,3.3,-61.7,-9.4,-58.8,-19.4C-56,-29.5,-44.1,-36.9,-32.8,-45.1C-21.5,-53.4,-10.7,-62.5,2.2,-65.5C15.1,-68.6,30.2,-65.5,43.7,-57.9Z",
+              ],
+            }}
+            transition={{
+              repeat: Infinity,
+              ease: "linear",
+              duration: 6,
+            }}
+          />
+        </svg>
+      </div>
+      <div className="blob4 sm:ml-[-70px] md:ml-[-50px] lg:ml-[-50px] sm:mt-[-150px] md:mt-[-150px] sm:w-[600px] ">
+        <svg viewBox="-100 -100 200 200" xmlns="http://www.w3.org/2000/svg">
+          <motion.path
+            style={{
+              stroke: "#47e5bc",
+              strokeWidth: 1,
+              strokeLinecap: "round",
+              fill: "#47e5bc",
+            }}
+            d="M41.5,-61.6C49.9,-51,50.1,-33.7,53.1,-18.6C56,-3.6,61.7,9.2,61.6,23.2C61.4,37.2,55.4,52.6,44.1,58.3C32.9,64.1,16.4,60.3,-0.2,60.6C-16.8,60.8,-33.7,65.2,-42.6,58.7C-51.6,52.2,-52.7,34.8,-54.7,19.9C-56.7,4.9,-59.5,-7.7,-56.1,-18.2C-52.7,-28.7,-42.9,-37.2,-32.5,-47.2C-22.1,-57.2,-11,-68.7,2.7,-72.5C16.5,-76.3,33.1,-72.3,41.5,-61.6Z"
+            animate={{
+              d: [
+                "M41.5,-61.6C49.9,-51,50.1,-33.7,53.1,-18.6C56,-3.6,61.7,9.2,61.6,23.2C61.4,37.2,55.4,52.6,44.1,58.3C32.9,64.1,16.4,60.3,-0.2,60.6C-16.8,60.8,-33.7,65.2,-42.6,58.7C-51.6,52.2,-52.7,34.8,-54.7,19.9C-56.7,4.9,-59.5,-7.7,-56.1,-18.2C-52.7,-28.7,-42.9,-37.2,-32.5,-47.2C-22.1,-57.2,-11,-68.7,2.7,-72.5C16.5,-76.3,33.1,-72.3,41.5,-61.6Z",
+                "M42,-57.9C54.3,-48.8,64.2,-36.4,66.4,-23.1C68.6,-9.8,63.3,4.5,55.9,15.3C48.4,26.1,39,33.4,29.4,46.8C19.7,60.3,9.9,79.9,-4,85.4C-17.9,91,-35.7,82.4,-49.6,70.3C-63.5,58.2,-73.3,42.6,-72.8,27.6C-72.3,12.5,-61.4,-1.9,-53.9,-15.1C-46.3,-28.3,-42,-40.1,-33.6,-50.6C-25.2,-61,-12.6,-70,1.1,-71.5C14.8,-73,29.6,-67.1,42,-57.9Z",
+                "M43.8,-60.2C52.9,-53.6,53.8,-35.7,58,-19.6C62.2,-3.5,69.7,10.8,67.8,23.7C65.9,36.6,54.7,48.2,41.8,53.5C28.9,58.7,14.5,57.7,-0.7,58.6C-15.8,59.5,-31.5,62.3,-45.7,57.5C-59.8,52.6,-72.2,40.1,-75.2,25.7C-78.2,11.3,-71.6,-4.9,-63.8,-18.2C-56,-31.4,-46.8,-41.7,-36,-47.6C-25.1,-53.6,-12.6,-55.3,2.4,-58.6C17.3,-61.9,34.7,-66.7,43.8,-60.2Z",
+                "M51.1,-68.8C65.5,-59.8,76.1,-44,80,-27.1C84,-10.3,81.3,7.6,74.4,22.8C67.6,38,56.6,50.4,43.5,61.1C30.4,71.7,15.2,80.6,0.8,79.5C-13.6,78.4,-27.2,67.3,-37.3,55.7C-47.4,44,-53.9,31.8,-56.1,19.6C-58.2,7.3,-56,-5.1,-53.7,-19.1C-51.4,-33,-49,-48.6,-40.1,-59.4C-31.1,-70.2,-15.5,-76.3,1.4,-78.2C18.3,-80.1,36.6,-77.8,51.1,-68.8Z",
+                "M35.2,-47.5C49.5,-38.2,67.4,-32.9,73.9,-21.9C80.4,-10.8,75.5,6,68,19.9C60.5,33.8,50.4,44.6,38.6,57.3C26.9,70,13.4,84.6,-0.9,85.9C-15.2,87.1,-30.5,75,-41.1,61.9C-51.7,48.9,-57.7,34.8,-59.5,21.3C-61.2,7.7,-58.6,-5.2,-55.3,-18.7C-51.9,-32.1,-47.7,-46.1,-38.4,-57C-29.1,-67.9,-14.5,-75.8,-2,-73C10.5,-70.3,21,-56.8,35.2,-47.5Z",
+                "M41.5,-61.6C49.9,-51,50.1,-33.7,53.1,-18.6C56,-3.6,61.7,9.2,61.6,23.2C61.4,37.2,55.4,52.6,44.1,58.3C32.9,64.1,16.4,60.3,-0.2,60.6C-16.8,60.8,-33.7,65.2,-42.6,58.7C-51.6,52.2,-52.7,34.8,-54.7,19.9C-56.7,4.9,-59.5,-7.7,-56.1,-18.2C-52.7,-28.7,-42.9,-37.2,-32.5,-47.2C-22.1,-57.2,-11,-68.7,2.7,-72.5C16.5,-76.3,33.1,-72.3,41.5,-61.6Z",
+              ],
+            }}
+            transition={{
+              repeat: Infinity,
+              ease: "linear",
+              duration: 6.3,
+            }}
+          />
+        </svg>
+      </div>
+      <div className="blob5 lg:w-[500px] lg:mt-[-50px] lg:ml-[-70px]">
+        <svg viewBox="-100 -100 200 200" xmlns="http://www.w3.org/2000/svg">
+          <motion.path
+            style={{
+              stroke: "#DFB5DF",
+              strokeWidth: 1,
+              strokeLinecap: "round",
+              fill: "#DFB5DF",
+            }}
+            d="M36.5,-47.4C49.5,-40.8,63.8,-33.1,68.5,-21.6C73.1,-10,68.2,5.3,60.9,17.3C53.6,29.4,43.9,38.3,33.4,46C22.8,53.8,11.4,60.6,-2,63.4C-15.4,66.1,-30.9,64.9,-44.9,58.3C-59,51.6,-71.7,39.5,-75.2,25.2C-78.7,11,-73.1,-5.5,-68.8,-23.5C-64.5,-41.5,-61.5,-61,-50.2,-68.1C-39,-75.2,-19.5,-69.9,-3.9,-64.6C11.8,-59.2,23.5,-53.9,36.5,-47.4Z"
+            animate={{
+              d: [
+                "M36.5,-47.4C49.5,-40.8,63.8,-33.1,68.5,-21.6C73.1,-10,68.2,5.3,60.9,17.3C53.6,29.4,43.9,38.3,33.4,46C22.8,53.8,11.4,60.6,-2,63.4C-15.4,66.1,-30.9,64.9,-44.9,58.3C-59,51.6,-71.7,39.5,-75.2,25.2C-78.7,11,-73.1,-5.5,-68.8,-23.5C-64.5,-41.5,-61.5,-61,-50.2,-68.1C-39,-75.2,-19.5,-69.9,-3.9,-64.6C11.8,-59.2,23.5,-53.9,36.5,-47.4Z",
+                "M38.7,-50.5C51.5,-43.9,64.2,-34.5,69.6,-21.7C75,-9,73.1,7.1,65.1,18C57.2,28.9,43.3,34.7,31.5,39.4C19.6,44.2,9.8,47.8,-0.2,48.1C-10.2,48.3,-20.4,45.2,-30.9,40.1C-41.4,34.9,-52.3,27.7,-62.3,15.8C-72.3,3.8,-81.6,-12.8,-78,-25.8C-74.4,-38.7,-57.9,-47.9,-42.8,-53.8C-27.7,-59.6,-13.8,-62.2,-0.4,-61.5C12.9,-60.9,25.9,-57.2,38.7,-50.5Z",
+                "M41.2,-57.2C49.2,-50.9,48.7,-33.3,50.2,-18.6C51.7,-4,55.4,7.6,53.5,18.6C51.6,29.7,44.3,40.2,34.4,51.5C24.6,62.7,12.3,74.6,-2.8,78.5C-17.9,82.3,-35.8,78.2,-48.1,67.7C-60.5,57.3,-67.1,40.7,-68.8,24.9C-70.4,9.1,-67,-5.8,-61.8,-19.5C-56.5,-33.2,-49.4,-45.7,-38.8,-51.1C-28.2,-56.6,-14.1,-54.9,1.2,-56.6C16.6,-58.3,33.2,-63.4,41.2,-57.2Z",
+                "M30,-42.1C40.4,-33.8,51.4,-27,58.7,-16.3C65.9,-5.6,69.4,9,65.8,21.8C62.2,34.6,51.6,45.5,39.5,55.3C27.3,65,13.7,73.6,-1.1,75.1C-15.8,76.6,-31.6,70.9,-44.8,61.5C-57.9,52.1,-68.4,38.8,-71,24.5C-73.6,10.2,-68.4,-5.1,-64.3,-21.9C-60.3,-38.7,-57.4,-56.9,-46.9,-65.1C-36.4,-73.4,-18.2,-71.6,-4.2,-65.9C9.8,-60.1,19.6,-50.3,30,-42.1Z",
+                "M31.6,-48.1C42.7,-35.5,54.6,-28.5,62,-17.4C69.5,-6.2,72.5,9.2,68.6,22.6C64.7,36,53.7,47.4,41.1,54.2C28.5,60.9,14.2,62.9,1.6,60.7C-11,58.5,-22.1,52,-33.4,44.9C-44.8,37.7,-56.5,30,-65.7,17.6C-75,5.2,-81.8,-11.8,-77,-24.5C-72.1,-37.2,-55.7,-45.6,-40.9,-57.1C-26.2,-68.5,-13.1,-83,-1.4,-81.1C10.3,-79.2,20.6,-60.8,31.6,-48.1Z",
+                "M36.5,-47.4C49.5,-40.8,63.8,-33.1,68.5,-21.6C73.1,-10,68.2,5.3,60.9,17.3C53.6,29.4,43.9,38.3,33.4,46C22.8,53.8,11.4,60.6,-2,63.4C-15.4,66.1,-30.9,64.9,-44.9,58.3C-59,51.6,-71.7,39.5,-75.2,25.2C-78.7,11,-73.1,-5.5,-68.8,-23.5C-64.5,-41.5,-61.5,-61,-50.2,-68.1C-39,-75.2,-19.5,-69.9,-3.9,-64.6C11.8,-59.2,23.5,-53.9,36.5,-47.4Z",
+              ],
+            }}
+            transition={{
+              repeat: Infinity,
+              ease: "linear",
+              duration: 5.7,
+            }}
+          />
+        </svg>
+      </div>
+    </div>
+  );
 }
