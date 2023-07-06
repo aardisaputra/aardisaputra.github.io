@@ -7,7 +7,7 @@
 }
 
 .enterStart {
-    @apply transition-all duration-[600] opacity-0
+    @apply transition-all duration-[600] opacity-100
 }
 
 .title {

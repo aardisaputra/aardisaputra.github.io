@@ -4,11 +4,9 @@ import { useState, useRef, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import styles from "./Content.module.css";
 
-const Content = ({ title, content }) => {
+const Content = ({ title, content }: { title: string; content: any }) => {
   const { ref, inView, entry } = useInView({ rootMargin: "-300px" });
   const [loaded, setLoaded] = useState(false);
-
-  let content_list: string[] = content;
 
   useEffect(() => {
     if (loaded) {
@@ -17,6 +15,7 @@ const Content = ({ title, content }) => {
     if (inView) {
       setLoaded(true);
     }
+    console.log(inView);
   }, [inView]);
 
   return (
@@ -27,11 +26,7 @@ const Content = ({ title, content }) => {
         }`}
       >
         <h1 className={styles.title}>{title}</h1>
-        {content_list.map((line) => (
-          <div key={title} className={styles.mainText}>
-            {line}
-          </div>
-        ))}
+        <div className={styles.mainText}>{content}</div>
       </div>
     </main>
   );

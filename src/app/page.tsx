@@ -5,180 +5,192 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   const allText = {
-    profile: [
+    profile: (
       <div>
-        I'm Austin, a junior at UC Berkeley studying Computer Science and
-        Economics. My interests range from full-stack development to financial
-        econometrics, and everything in between, including AI/ML, cloud
-        computing, trading, development economics, and data science.
-      </div>,
-      <br />,
+        <div>
+          I&quot;m Austin, a junior at UC Berkeley studying Computer Science and
+          Economics. My interests range from full-stack development to financial
+          econometrics, and everything in between, including AI/ML, cloud
+          computing, trading, development economics, and data science.
+        </div>
+        <br />
+        <div>
+          My goal is to leverage my technical skills to become an entrepreneur
+          that solves problems faced by developing countries, especially those
+          surrounding AI adoption at individual and corporate levels as well as
+          everyday issues that are often overlooked.
+        </div>
+        <br />
+        <div>
+          In my free time, I enjoy watching and playing basketball, playing the
+          guitar and piano, traveling to new countries, exploring different
+          fashion styles, and eating good food.
+        </div>
+      </div>
+    ),
+    exp: (
       <div>
-        My goal is to leverage my technical skills to become an entrepreneur
-        that solves problems faced by developing countries, especially those
-        surrounding AI adoption at individual and corporate levels as well as
-        everyday issues that are often overlooked.
-      </div>,
-      <br />,
+        <div>
+          I&quot;ve worked with companies including{" "}
+          <a className="hover:font-semibold" href="https://www.hioscar.com/">
+            {" "}
+            Oscar Health
+          </a>
+          , an NY-based health insurance company, as a SWE intern, where I
+          worked on projects in the intersection of data and cloud computing;{" "}
+          <a className="hover:font-semibold" href="https://www.memoryz.co/">
+            {" "}
+            Memoryz
+          </a>
+          , a personalized caretaker app, as a mobile app developer for their
+          upcoming Diaryz app; and{" "}
+          <a className="hover:font-semibold" href="https://urbaneyes.ai/">
+            {" "}
+            UrbanEyes
+          </a>
+          , a pre-seed real-estate/data startup as a data engineer, where I
+          developed the company&quot;s first ETL pipelines.
+        </div>
+        <br />
+        <div>
+          On campus, I&apos;m currently a student web developer at the{" "}
+          <a
+            className="hover:font-semibold"
+            href="https://blumcenter.berkeley.edu/"
+          >
+            {" "}
+            Blum Center
+          </a>{" "}
+          and have also worked as a part-time web accessibility engineer. I am
+          involved with several organizations such as the{" "}
+          <a className="hover:font-semibold" href="https://dssberkeley.com//">
+            {" "}
+            Data Science Society at Berkeley
+          </a>{" "}
+          where I am an Academic Director, in charge of running a student-led
+          course on practical applications of data science, and{" "}
+          <a
+            className="hover:font-semibold"
+            href="https://www.berkeleypse.com/"
+          >
+            {" "}
+            Pi Sigma Epsilon
+          </a>
+          , where I hold the role of Director of Operations, responsible for
+          organizing meetings, workshops, and more.
+        </div>
+      </div>
+    ),
+    projects: (
       <div>
-        In my free time, I enjoy watching and playing basketball, playing the
-        guitar and piano, traveling to new countries, exploring different
-        fashion styles, and eating good food.
-      </div>,
-    ],
-    exp: [
-      <div>
-        I've worked with companies including{" "}
-        <a className="hover:font-semibold" href="https://www.hioscar.com/">
-          {" "}
-          Oscar Health
-        </a>
-        , an NY-based health insurance company, as a SWE intern, where I worked
-        on projects in the intersection of data and cloud computing;{" "}
-        <a className="hover:font-semibold" href="https://www.memoryz.co/">
-          {" "}
-          Memoryz
-        </a>
-        , a personalized caretaker app, as a mobile app developer for their
-        upcoming Diaryz app; and{" "}
-        <a className="hover:font-semibold" href="https://urbaneyes.ai/">
-          {" "}
-          UrbanEyes
-        </a>
-        , a pre-seed real-estate/data startup as a data engineer, where I
-        developed the company's first ETL pipelines.
-      </div>,
-      <br />,
-      <div>
-        On campus, I'm currently a student web developer at the{" "}
-        <a
-          className="hover:font-semibold"
-          href="https://blumcenter.berkeley.edu/"
-        >
-          {" "}
-          Blum Center
-        </a>{" "}
-        and have also worked as a part-time web accessibility engineer. I am
-        involved with several organizations such as the{" "}
-        <a className="hover:font-semibold" href="https://dssberkeley.com//">
-          {" "}
-          Data Science Society at Berkeley
-        </a>{" "}
-        where I am an Academic Director, in charge of running a student-led
-        course on practical applications of data science, and{" "}
-        <a className="hover:font-semibold" href="https://www.berkeleypse.com/">
-          {" "}
-          Pi Sigma Epsilon
-        </a>
-        , where I hold the role of Director of Operations, responsible for
-        organizing meetings, workshops, and more.
-      </div>,
-    ],
-    projects: [
-      <div>
-        In my first hackathon, my friends and I made{" "}
-        <a
-          className="hover:font-semibold"
-          href="https://devpost.com/software/quiconnect"
-        >
-          {" "}
-          QuiConnect
-        </a>
-        , a QR-based contacts app that allows quick sharing of social media
-        accounts. I've went on to join other hackathons like HackMIT, where I
-        worked on a multiplayer{" "}
-        <a className="hover:font-semibold" href="https://youtu.be/UL_HUphF8SE">
-          {" "}
-          Spotify song-guessing game.
-        </a>
-      </div>,
-      <br />,
-      <div>
-        Several awards I have received for my projects include 3rd place at the
-        2022 UChicago Trading Competition for my{" "}
-        <a
-          className="hover:font-semibold"
-          href="https://github.com/aardisaputra/uchicago_case3"
-        >
-          {" "}
-          portfolio reallocation bot
-        </a>
-        , 2nd Place at CalHacks for{" "}
-        <a
-          className="hover:font-semibold"
-          href="https://devpost.com/software/aequalis"
-        >
-          {" "}
-          Aequalis
-        </a>
-        , a blockchain-based invoice tracker for hospitals to promote price
-        transparency, and 1st Place at CivHacks for{" "}
-        <a
-          className="hover:font-semibold"
-          href="https://devpost.com/software/warden-nevh5p"
-        >
-          {" "}
-          Warden
-        </a>
-        , a crime tracking app to promote safety in the Bay Area.
-      </div>,
-      <br />,
-      <div>
-        In my classes, I've worked on various projects such as{" "}
-        <a
-          className="hover:font-semibold"
-          href="https://github.com/aardisaputra/gitlet"
-        >
-          {" "}
-          Gitlet
-        </a>
-        , a Git clone,{" "}
-        <a
-          className="hover:font-semibold"
-          href="https://github.com/aardisaputra/ataxx"
-        >
-          {" "}
-          Ataxx
-        </a>
-        , an AI-powered board game,{" "}
-        <a
-          className="hover:font-semibold"
-          href="https://github.com/aardisaputra/scheme_interpreter"
-        >
-          {" "}
-          an interpreter
-        </a>{" "}
-        for the Scheme programming language, a{" "}
-        <a
-          className="hover:font-semibold"
-          href="https://inst.eecs.berkeley.edu/~cs61c/sp23/projects/proj3/"
-        >
-          {" "}
-          virtual CPU
-        </a>{" "}
-        using Logisim, and a{" "}
-        <a
-          className="hover:font-semibold"
-          href="https://inst.eecs.berkeley.edu/~cs61c/sp23/projects/proj4/"
-        >
-          {" "}
-          convolution script
-        </a>{" "}
-        written in C optimized with Open MPI and TLP.
-      </div>,
-      <br />,
-      <div>
-        For a complete list of all my projects, check out my{" "}
-        <a
-          className="hover:font-semibold"
-          href="https://github.com/aardisaputra"
-        >
-          GitHub profile
-        </a>
-        .
-      </div>,
-    ],
-    contacts: [
+        <div>
+          In my first hackathon, my friends and I made{" "}
+          <a
+            className="hover:font-semibold"
+            href="https://devpost.com/software/quiconnect"
+          >
+            {" "}
+            QuiConnect
+          </a>
+          , a QR-based contacts app that allows quick sharing of social media
+          accounts. I&apos;ve went on to join other hackathons like HackMIT,
+          where I worked on a multiplayer{" "}
+          <a
+            className="hover:font-semibold"
+            href="https://youtu.be/UL_HUphF8SE"
+          >
+            {" "}
+            Spotify song-guessing game.
+          </a>
+        </div>
+        <br />
+        <div>
+          Several awards I have received for my projects include 3rd place at
+          the 2022 UChicago Trading Competition for my{" "}
+          <a
+            className="hover:font-semibold"
+            href="https://github.com/aardisaputra/uchicago_case3"
+          >
+            {" "}
+            portfolio reallocation bot
+          </a>
+          , 2nd Place at CalHacks for{" "}
+          <a
+            className="hover:font-semibold"
+            href="https://devpost.com/software/aequalis"
+          >
+            {" "}
+            Aequalis
+          </a>
+          , a blockchain-based invoice tracker for hospitals to promote price
+          transparency, and 1st Place at CivHacks for{" "}
+          <a
+            className="hover:font-semibold"
+            href="https://devpost.com/software/warden-nevh5p"
+          >
+            {" "}
+            Warden
+          </a>
+          , a crime tracking app to promote safety in the Bay Area.
+        </div>
+        <br />
+        <div>
+          In my classes, I&apos;ve worked on various projects such as{" "}
+          <a
+            className="hover:font-semibold"
+            href="https://github.com/aardisaputra/gitlet"
+          >
+            {" "}
+            Gitlet
+          </a>
+          , a Git clone,{" "}
+          <a
+            className="hover:font-semibold"
+            href="https://github.com/aardisaputra/ataxx"
+          >
+            {" "}
+            Ataxx
+          </a>
+          , an AI-powered board game,{" "}
+          <a
+            className="hover:font-semibold"
+            href="https://github.com/aardisaputra/scheme_interpreter"
+          >
+            {" "}
+            an interpreter
+          </a>{" "}
+          for the Scheme programming language, a{" "}
+          <a
+            className="hover:font-semibold"
+            href="https://inst.eecs.berkeley.edu/~cs61c/sp23/projects/proj3/"
+          >
+            {" "}
+            virtual CPU
+          </a>{" "}
+          using Logisim, and a{" "}
+          <a
+            className="hover:font-semibold"
+            href="https://inst.eecs.berkeley.edu/~cs61c/sp23/projects/proj4/"
+          >
+            {" "}
+            convolution script
+          </a>{" "}
+          written in C optimized with Open MPI and TLP.
+        </div>
+        <br />
+        <div>
+          For a complete list of all my projects, check out my{" "}
+          <a
+            className="hover:font-semibold"
+            href="https://github.com/aardisaputra"
+          >
+            GitHub profile
+          </a>
+          .
+        </div>
+      </div>
+    ),
+    contacts: (
       <div>
         If you would like to reach out to me for professional inquiries or
         request a copy of my resume, here is my{" "}
@@ -203,8 +215,8 @@ export default function Home() {
           Instagram here
         </a>
         .
-      </div>,
-    ],
+      </div>
+    ),
   };
 
   return (
